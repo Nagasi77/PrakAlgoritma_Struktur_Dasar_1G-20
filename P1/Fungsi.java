@@ -68,6 +68,8 @@ public class Fungsi {
             }
             System.out.println("Stock " + jenisBunga + ": " + stock[3][i]);
         }
+        calculate();
+        descrease();
 
     
         for (int i = 1; i < stock[3].length; i++) {
