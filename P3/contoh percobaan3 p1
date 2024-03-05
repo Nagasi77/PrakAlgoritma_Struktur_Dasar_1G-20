@@ -1,0 +1,20 @@
+  // Konstruktor tanpa parameter
+    public Mobil() {
+        merek = "Tidak Diketahui";
+        model = "Tidak Diketahui";
+        tahun = 0;
+    }
+
+    // Konstruktor dengan parameter merek dan model
+    public Mobil(String merek, String model) {
+        this.merek = merek;
+        this.model = model;
+        tahun = 0; // Tahun default
+    }
+
+    // Konstruktor dengan parameter lengkap
+    public Mobil(String merek, String model, int tahun) {
+        this.merek = merek;
+        this.model = model;
+        this.tahun = tahun;
+    }
