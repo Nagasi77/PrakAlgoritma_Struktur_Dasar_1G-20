@@ -5,13 +5,18 @@ import java.util.Scanner;
 public class Faktorial {
     public int nilai;
 
-int faktorialBF(int n) {
-    int fakto = 1;
-    for(int i=1; i<=n;i++) {
-        fakto = fakto * i;
+    int faktorialBF_alternatif(int n) {
+        int fakto = 1;
+        int i = 1;
+    
+        do {
+            fakto *= i;
+            i++;
+        } while (i <= n);
+    
+        return fakto;
     }
-    return fakto;
-}    
+      
 int faktorialDC(int n){
     if(n==1) {
         return 1;
@@ -35,7 +40,7 @@ public static void main(String[] args) {
     }
             System.out.println("HASIL - BRUTE FORCE");
             for (int j = 0; j < iJml; j++) {
-            System.out.println("Hasil penghitungan faktorial menggunakan Brute Force adalah " + fk[j].faktorialBF(fk[j].nilai));            
+            System.out.println("Hasil penghitungan faktorial menggunakan Brute Force adalah " + fk[j].faktorialBF_alternatif(fk[j].nilai));            
             }
             System.out.println("HASIL - DIVIDE AND CONQUER");
             for (int k = 0; k < iJml; k++) {
