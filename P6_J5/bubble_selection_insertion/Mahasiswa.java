@@ -1,3 +1,4 @@
+package P6_J5.bubble_selection_insertion;
 public class Mahasiswa {
     String nama;
     int thnMasuk, umur;
