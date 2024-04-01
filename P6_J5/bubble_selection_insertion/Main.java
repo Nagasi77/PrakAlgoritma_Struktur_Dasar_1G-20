@@ -20,7 +20,7 @@ public static void main(String[] args) {
     list.tampil();
 
     System.out.println("Data mahasiswa setelah sorting desc bedasarkan ipk");
-    list.selectionSort();
+    list.insertionSort();
     list.tampil();
 }    
 }
