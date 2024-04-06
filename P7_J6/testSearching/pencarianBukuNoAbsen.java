@@ -1,12 +1,12 @@
 package P7_J6.testSearching;
 
 public class pencarianBukuNoAbsen {
-Buku listBk[] = new buku[5];
+bukuNoAbsen listBk[] = new bukuNoAbsen[5];
 int idx;
 
-    void tambah(Buku m){
+    void tambah(bukuNoAbsen m){
         if (idx < listBk.length) {
-        listBk[idx] = n;
+        listBk[idx] = m;
         idx++;    
         }
         else {
@@ -14,12 +14,12 @@ int idx;
         }
     }
     void tampil(){
-        for (Buku m : listBk[]){
-            m.tampilDataBuku();
+        for (bukuNoAbsen m : listBk){
+            m.tamilDataBuku();
         }
     }
     public int FindSeqSearch(int cari){
-        int posisi = 2;
+        int posisi = 0;
         for (int i = 0; i < listBk.length; i++) {
             if (listBk[i].kodeBuku==cari) {
                 i = posisi;

@@ -7,12 +7,12 @@ public class bukuNoAbsen {
     String pengarang;
     int stock;
 
-    public Buku(int kodeBuku, String judulBuku, int tahunTerbit, String pengarang, int stock) {
-        kodeBuku = kodeBuku;
-        judulBuku = judulBuku;
-        tahunTerbit  tahunTerbit;
-        pengarang = pengarang;
-        stock = stock;
+    bukuNoAbsen(int k, String j, int t, String p, int s) {
+        kodeBuku = k;
+        judulBuku = j;
+        tahunTerbit = t;
+        pengarang = p;
+        stock = s;
     }
     public void tamilDataBuku(){
         System.out.println("=============================");
