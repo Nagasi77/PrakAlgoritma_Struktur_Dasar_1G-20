@@ -43,6 +43,15 @@ public class bukuMainNoAbsen {
         System.out.println("menggunakan sequential Search");
         int posisi = data.FindSeqSearch(cari);
         data.Tampilposisi(cari, posisi);
-    }
+        data.TampilData(cari, posisi);
 
+        bukuNoAbsen dataBuku = data.FindBuku(cari);
+        dataBuku.tampilDataBuku();
+
+        System.out.println("===================================================");
+        System.out.println("menggunakan binary search");
+        posisi = data.FindBinarySearch(cari, 0, jumBuku - 1);
+        data.Tampilposisi(cari, posisi);
+        data.TampilData(cari,posisi);
+    }
 }

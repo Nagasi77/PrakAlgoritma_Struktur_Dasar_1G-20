@@ -14,7 +14,15 @@ public class bukuNoAbsen {
         pengarang = p;
         stock = s;
     }
-    public void tamilDataBuku(){
+    public void tampilDataBuku(){
+        System.out.println("=============================");
+        System.out.println("Kode buku : "+kodeBuku);
+        System.out.println("Judul buku : " + judulBuku);
+        System.out.println("Tahun terbit : "+tahunTerbit);
+        System.out.println("Pengarang : "+pengarang);
+        System.out.println("Stock : "+stock);
+    }
+    public void TampilData() {
         System.out.println("=============================");
         System.out.println("Kode buku : "+kodeBuku);
         System.out.println("Judul buku : " + judulBuku);
