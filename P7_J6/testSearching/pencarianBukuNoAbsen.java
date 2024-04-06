@@ -63,16 +63,16 @@ int idx;
     public int FindBinarySearch(int cari, int left, int right){
         int mid;
         if (right >= left) {
-            mid = (right) / 2;
+            mid = (left + right) / 2;
             if (cari == listBk[mid].kodeBuku) {
                 return mid;
-            } else if (listBk[mid].kodeBuku < cari) {
-                return FindBinarySearch(cari, left, mid);
+            } else if (cari < listBk[mid].kodeBuku) {
+                return FindBinarySearch(cari, mid + 1, right); // Mencari di setengah kanan
             } else {
-                return FindBinarySearch(cari, mid, right);
+                return FindBinarySearch(cari, left, mid - 1); // Mencari di setengah kiri
+            }
         }
-      }
-    return -1;
+        return -1;
     }
-   
+    
 }
