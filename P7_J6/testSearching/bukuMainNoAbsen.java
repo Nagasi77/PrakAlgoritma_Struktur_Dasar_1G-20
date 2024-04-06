@@ -1,5 +1,4 @@
 package P7_J6.testSearching;
-
 import java.util.Scanner;
 
 public class bukuMainNoAbsen {
