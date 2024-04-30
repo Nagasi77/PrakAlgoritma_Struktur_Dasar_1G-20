@@ -101,5 +101,14 @@ public class Queue {
             }
             return dt;
         }
+        public Nasabah rearPeak() {
+            if (rear == -1) {
+                System.out.println("Queue masih kosong");
+                return null;
+            } else {
+                return data[rear];
+            }
+    
+        }
     }
 

@@ -2,6 +2,8 @@ package P10_J8.Praktikum1;
 
 import java.util.Scanner;
 
+import P10_J8.Praktikum2.Nasabah;
+
 public class QueueMain {
     public static void menu(){
         System.out.println();
@@ -13,6 +15,7 @@ public class QueueMain {
         System.out.println("5. Clear");
         System.out.println("-------------------");
     }
+
 
     public static void main(String[] args) {
         Scanner sc20 = new Scanner(System.in);
