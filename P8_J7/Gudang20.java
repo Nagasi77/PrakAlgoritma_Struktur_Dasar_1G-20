@@ -37,17 +37,6 @@ public class Gudang20 {
         }
 }
 
-    public Barang20 ambilBarang() {
-        if (!cekKosong()) {
-            Barang20 delete = tumpukan[top];
-            top--;
-            System.out.println("Barang "+ delete.nama + " diambil dari Gudang");
-            return delete;
-        } else {
-            System.out.println("Tumpukan barang kosong.");
-            return null;
-        }
-    }
 
     public Barang20 lihatBarangTeratas() {
         if (!cekKosong()) {
@@ -69,5 +58,31 @@ public class Gudang20 {
         } else {
             System.out.println("Tumpukan barang kosong");
         }
+    }
+    public Barang20 ambilBarang(){
+        if (!cekKosong()) {
+            Barang20 delete = tumpukan[top];
+            top--;
+            System.out.println("Barang "+ delete.nama + " diambil dari Gudang");
+            System.out.println("Kode unik dalam biner: " + konversiDesimalKeBiner(delete.kode));
+            return delete;
+        } else {
+            System.out.println("tummpukan barang kosong");
+            return null;
+        }
+    }
+
+    public String konversiDesimalKeBiner(int kode) {
+        StackKonversi20 stack = new StackKonversi20();
+        while (kode > 0) {
+            int sisa = kode % 2;
+            stack.push(sisa);
+            kode = kode / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 }

@@ -8,6 +8,7 @@ public class Utama20 {
         Gudang20 Gudang = new Gudang20(ukuran);
         Scanner sc20 = new Scanner(System.in);
         boolean Nur = true;
+
         while (Nur == true) {
             System.out.println("\nMenu");
             System.out.println("1. Tambah barang");
@@ -44,6 +45,7 @@ public class Utama20 {
                 case 5:
                     System.out.print("Ubah kapasitas menjadi : ");
                     ukuran = sc20.nextInt();
+                    Gudang = new Gudang20(ukuran);
                     break;
                 case 6:
                     Nur = false;
