@@ -24,13 +24,13 @@ public class SingleLinkedList {
     void addFirst(int input) {
         Node ndInput = new Node(input, null);
         if (isEmpty()) {
-            head = ndInput; 
+            head = ndInput;
             tail = ndInput;
             // menghapus kode yang tidak dibutuhkan
         } else {
             ndInput.next = head;
             head = ndInput;
-             // menghapus kode yang tidak dibutuhkan
+            // menghapus kode yang tidak dibutuhkan
         }
     }
 
@@ -59,8 +59,8 @@ public class SingleLinkedList {
             if (temp.data == key) {
                 ndInput.next = temp.next;
                 temp.next = ndInput;
-                if (ndInput.next == null) {// jika tidak ada node selanjutnya                        
-                       // maka jadikan ndInput sebagai tail
+                if (ndInput.next == null) {// jika tidak ada node selanjutnya
+                    // maka jadikan ndInput sebagai tail
                     tail = ndInput;
                 }
                 break;// jangan lupa di rem, jangan gas terus!
@@ -99,16 +99,16 @@ public class SingleLinkedList {
         }
     }
 
-    int getData (int index){
+    int getData(int index) {
         // ambil nilai data tepat sesuai indeks yang ditunjuk
         Node tmp = head;
-        for (int i = 0; i <index -1; i++) {//ganti menjadi 1
+        for (int i = 0; i < index - 1; i++) {// ganti menjadi 1
             tmp = tmp.next;
         }
         return tmp.next.data;
     }
 
-    int indexOf(int key){
+    int indexOf(int key) {
         // ketahui posisi nodemu ada di indeks sama
         Node tmp = head;
         int index = 0;
@@ -117,85 +117,83 @@ public class SingleLinkedList {
             index++;
         }
         if (tmp == null) {
-            return -1;    
-        }else {
+            return -1;
+        } else {
             return index;
         }
     }
 
-void removeFirst(){
-    if (isEmpty()) {// menghapus !
-        System.out.println("Linked list ini masih kosong"
-        + "tidak dapat dihapus");
-    }else if (head == tail) {
-        head = tail = null;
-        
-    }else {
-      head = head.next;
-    }
-}
+    void removeFirst() {
+        if (isEmpty()) {// menghapus !
+            System.out.println("Linked list ini masih kosong"
+                    + "tidak dapat dihapus");
+        } else if (head == tail) {
+            head = tail = null;
 
-void removeLast(){
-   
+        } else {
+            head = head.next;
+        }
+    }
+
+    void removeLast() {
+
         if (isEmpty()) {
             System.out.println("Linked list ini masih kosong"
-            + "tidak dapat dihapus");
-    }else if (head == tail) {
-        head =tail = null;
-    }else {
-        Node temp = head;
-        while (temp.next != tail) {
-            temp = temp.next;
+                    + "tidak dapat dihapus");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            Node temp = head;
+            while (temp.next != tail) {
+                temp = temp.next;
+            }
+            temp.next = null;
+            tail = temp.next;
         }
-        temp.next = null;
-        tail = temp.next;
     }
-}
 
-void remove(int key){
-    if (isEmpty()) {
-        System.out.println("Linked list ini masih kosong"
-        + "tidak dapat dihapus");
-    }else{
-        Node temp = head;
-        while (temp != null) {
-        if (temp.data == key && temp == head) {
+    void remove(int key) {
+        if (isEmpty()) {
+            System.out.println("Linked list ini masih kosong"
+                    + "tidak dapat dihapus");
+        } else {
+            Node temp = head;
+            while (temp != null) {
+                if (temp.data == key && temp == head) {
+                    removeFirst();
+                    break;
+
+                } else if (temp.next.data == key) {
+                    temp.next = temp.next.next;
+                    if (temp.next == null) {
+                        tail = temp;
+
+                    }
+                    break;
+
+                }
+                temp = temp.next;
+            }
+        }
+    }
+
+    public void removeAt(int index) {
+        if (index == 0) {
             removeFirst();
-            break;
-            
-        }else if (temp.next.data == key) {
+        } else {
+            Node temp = head;
+            for (int i = 0; i < index - 1; i++) {
+                temp = temp.next;
+            }
+
             temp.next = temp.next.next;
+
             if (temp.next == null) {
                 tail = temp;
-                
-            }
-            break;
-            
-        }
-        temp = temp.next;
-    }
-    }
-}
 
-public void removeAt(int index){
-    if (index == 0) {
-        removeFirst();
-    }else{
-        Node temp = head;
-        for (int i = 0; i < index - 1; i++) {
-            temp = temp.next;
-        }
-
-
-        temp.next = temp.next.next;
-   
-            if (temp.next == null) {
-                tail = temp;
-                
             }
 
-    }
-    
-}
-}
+        }
 
+    }
+}
