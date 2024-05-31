@@ -17,6 +17,6 @@ public class BinaryTreeArray20 {
     System.out.print(data[idxStart]+" ");
     traverseInOrder(2*idxStart+2);
    }                 
-}
+}//ralat
 }
 
