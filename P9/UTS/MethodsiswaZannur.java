@@ -59,7 +59,7 @@ void selectionSort() {
     for (int i = 0; i < listMrdZannur.length-1; i++) {
         int idxMin = i;
         for (int j = i+1; j < listMrdZannur.length; j++) {
-            if (listMrdZannur[j].nisnZannur.compareTo(listMrdZannur[idxMin].nisnZannur)) {
+            if (listMrdZannur[j].nisnZannur.compareTo(listMrdZannur[idxMin].nisnZannur) < 0) {
                 idxMin = j;
             }                
         }
@@ -69,4 +69,19 @@ void selectionSort() {
         listMrdZannur[i] = tmp;
     }
 }
+int binarySearchZannur(String cari, int left, int right){
+    int mid;
+    while (right >= left) {
+        mid = left + (right - left) / 2; // Avoid integer overflow
+        if (cari.compareTo(listMrdZannur[mid].nisnZannur) == 0) {
+            return mid; // Found
+        } else if (cari.compareTo(listMrdZannur[mid].nisnZannur) < 0) {
+            right = mid - 1; // Search in the left half
+        } else {
+            left = mid + 1; // Search in the right half
+        }
+    }
+    return -1; // Not found
 }
+}
+

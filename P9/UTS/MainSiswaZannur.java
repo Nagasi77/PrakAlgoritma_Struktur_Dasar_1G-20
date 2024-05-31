@@ -53,9 +53,8 @@ public class MainSiswaZannur {
                 System.out.println("Masukkan NISN siswa yang dicari");
                 System.out.print("NISN : ");
                 String cari = scZannur.next();
-                int posisi = data.binarySearchZannur(cari);
-                data.TampilposisiZannur(jumSiswa, posisi);
-                data.tampilDataSZannur(posisi);
+                int result = data.binarySearchZannur(cari);
+            data.tampilDataSZannur(result);
                 break;
                 case 4:
                 Zannur = false;
